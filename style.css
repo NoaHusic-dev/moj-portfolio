@@ -1,0 +1,65 @@
+        body {
+            background-color: #000000;
+        }
+        footer {
+            text-align:center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #09ff00;
+            width: auto;
+            margin-top: 20px;
+        }
+        .name {
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            background-color: #12970d;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .h1-opis {
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+            color: #09c6ff;
+            text-align: left;
+            font-style: italic;
+        }
+        .h3-opis {
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            color: #09ff00;
+            text-align: left;
+        }
+        .slika {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 120px;
+            height: 130px;
+            border-radius: 10%;
+            margin-top: 20px;
+        }
+        .certifikat1 {
+            display: block;
+            margin: 20px auto;
+            max-width: 80%;
+            height: 250px;
+        }
+        .navbar {
+            background-color: #09ff00;
+            padding: 10px;
+            text-align: center;
+        }
+        .nav-link {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-family: bold Arial, sans-serif;
+            }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .git {
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+        }
+        
