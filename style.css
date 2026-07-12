@@ -1,13 +1,23 @@
         body {
-            background-color: #F0F4F8;
+         background-color: #F0F4F8;
+        min-height: 100vh;
+        display: flex;
+         flex-direction: column; 
+         margin: 0;
+         margin-left: 4px;
+         margin-right: 4px;
+        }
+
+        main {
+        flex: 1;
         }
         footer {
-            text-align:center;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background-color: #3F4E4F;
-            width: auto;
-            margin-top: 20px;
+        text-align:center;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #3F4E4F;
+        width: auto;
+        margin-top: 20px;
         }
         .name {
             font-weight: bold;
