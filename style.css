@@ -31,7 +31,7 @@
             font-size: 1.2em;
             color: #1B2631;
             text-align: left;
-            font-style: italic;
+            font-style: bold;
         }
         .h3-opis {
             font-family: Arial, sans-serif;
@@ -43,8 +43,8 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 120px;
-            height: 130px;
+            width: 200px;
+            height: 200px;
             border-radius: 10%;
             margin-top: 20px;
         }
