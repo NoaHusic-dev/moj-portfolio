@@ -1,11 +1,11 @@
         body {
-            background-color: #F0F4F8;
+            background-color: #829ab2;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             margin: 0;
-            margin-left: 4px;
-            margin-right: 4px;
+            margin-left: 0px;
+            margin-right: 0px;
         }
 
         main {
@@ -43,7 +43,21 @@
             color: #3F4E4F;
             text-align: left;
         }
-
+                h1 {
+            margin-left: 4px;
+        }
+                h2 {
+            margin-left: 4px;
+        }
+                h3 {
+            margin-left: 4px;
+        }
+                h4 {
+            margin-left: 4px;
+        }
+                p {
+            margin-left: 4px;
+        }
         .slika {
             display: block;
             margin-left: auto;
@@ -82,4 +96,15 @@
             font-family: Arial, sans-serif;
             font-size: 1.1em;
             color: #1B2631;
+        }
+        .pravila-privatnosti {
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            color: #1B2631;
+        }
+        .kontakt-sadrzaj {
+            font-family: Arial, sans-serif;
+            font-size: 1.1em;
+            color: #1B2631;
+            margin-left: 4px;
         }
