@@ -1,0 +1,4 @@
+HTML Preview
+Live Preview
+Prettier - Code
+Microsoft Edge Tools for VS Code
