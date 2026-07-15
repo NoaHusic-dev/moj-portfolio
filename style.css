@@ -4,12 +4,11 @@
             display: flex;
             flex-direction: column;
             margin: 0;
-            margin-left: 0px;
-            margin-right: 0px;
         }
 
         main {
             flex: 1;
+            margin-left: 4px;
         }
 
         footer {
@@ -43,21 +42,7 @@
             color: #3F4E4F;
             text-align: left;
         }
-                h1 {
-            margin-left: 4px;
-        }
-                h2 {
-            margin-left: 4px;
-        }
-                h3 {
-            margin-left: 4px;
-        }
-                h4 {
-            margin-left: 4px;
-        }
-                p {
-            margin-left: 4px;
-        }
+        
         .slika {
             display: block;
             margin-left: auto;
