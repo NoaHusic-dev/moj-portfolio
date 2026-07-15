@@ -1,5 +1,5 @@
         body {
-            background-color: #829ab2;
+            background-image: url('/images/background.png');
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -53,13 +53,11 @@
             margin-top: 20px;
         }
 
-        .certifikat1 {
+        .img {
+            max-width: 70%;
+            height: auto;
             display: block;
-            margin: auto;
-            max-width: auto;
-            height: 250px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin: 10px auto;
         }
 
         .navbar {
