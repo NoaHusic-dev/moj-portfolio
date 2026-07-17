@@ -55,9 +55,9 @@
 
         .img {
             max-width: 70%;
-            height: auto;
+            height: 200px;
             display: block;
-            margin: 10px auto;
+            margin: 10px;
         }
 
         .navbar {
