@@ -119,3 +119,17 @@
     grid-column: 2;
     grid-row: span 2;
 }
+
+@media (max-width: 768px) { /* Ovo je za mobitele */
+    .parent {
+        grid-template-columns: 1fr;
+    }
+
+    .div13,
+    .div14,
+    .div16,
+    .div17 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
