@@ -1,132 +1,153 @@
-        body {
-            background-image: url('/images/mp-background.jpg');
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-        }
+body {
+    background-color: #A5C8D6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #1B2631;
+}
 
-        main {
-            flex: 1;
-            margin-left: 4px;
-        }
+main {
+    flex: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background-color: #3F4E4F;
-            width: auto;
-            margin-top: 20px;
-        }
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3F4E4F;
+    color: #ffffff;
+    margin-top: 40px;
+}
 
-        .name {
-            font-weight: bold;
-            font-family: Arial, sans-serif;
-            background-color: #34495e;
-            border-radius: 10px;
-            text-align: center;
-        }
+footer p {
+    margin: 10px 0 0 0;
+    font-size: 0.9em;
+}
 
-        .h1-opis {
-            font-family: Arial, sans-serif;
-            font-size: 1.2em;
-            color: #1B2631;
-            text-align: left;
-            font-style: bold;
-        }
+.name {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
 
-        .h3-opis {
-            font-family: Arial, sans-serif;
-            font-size: 1.1em;
-            color: #3F4E4F;
-            text-align: left;
-        }
-        
-        .slika {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 200px;
-            height: 200px;
-            border-radius: 10%;
-            margin-top: 20px;
-        }
+.h1-opis, .h2-opis {
+    font-size: 1.3em;
+    color: #1B2631;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
 
-        .img {
-            max-width: 70%;
-            height: 200px;
-            display: block;
-            margin: 10px;
-        }
+.h3-opis {
+    font-size: 1em;
+    color: #2C3E50;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0;
+}
 
-        .navbar {
-            background-color: #1B2631;
-            padding: 10px;
-            text-align: center;
-        }
+.slika {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-        .nav-link {
-            color: #A5C8D6;
-            text-decoration: none;
-            margin: 0 10px;
-            font-family: bold Arial, sans-serif;
-        }
+.navbar {
+    background-color: #1B2631;
+    padding: 15px;
+    text-align: center;
+}
 
-        .nav-link:hover {
-            text-decoration: underline;
-        }
+.nav-link {
+    color: #A5C8D6;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
 
-        .git {
-            font-family: Arial, sans-serif;
-            font-size: 1.1em;
-            color: #1B2631;
-        }
-        .pravila-privatnosti {
-            font-family: Arial, sans-serif;
-            font-size: 1.1em;
-            color: #1B2631;
-        }
-        .kontakt-sadrzaj {
-            font-family: Arial, sans-serif;
-            font-size: 1.1em;
-            color: #1B2631;
-            margin-left: 4px;
-        }
+.nav-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.git, .pravila-privatnosti {
+    font-size: 1em;
+    color: #A5C8D6;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.git:hover, .pravila-privatnosti:hover {
+    color: #ffffff;
+}
+
+.kontakt-sadrzaj {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+form input[type="email"], 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1B2631;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+form button {
+    background-color: #1B2631;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+
+form button:hover {
+    background-color: #3F4E4F;
+}
 
 .parent {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+    margin-top: 20px;
 }
 
-.div13 {
-    grid-column: span 2;
-}
-
-.div14 {
-    grid-column: 1;
-}
-
-.div16 {
-    grid-column: 1;
-}
-
-.div17 {
-    grid-column: 2;
-    grid-row: span 2;
-}
+.div13 { grid-column: span 2; }
+.div14 { grid-column: 1; }
+.div16 { grid-column: 1; }
+.div17 { grid-column: 2; grid-row: span 2; }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+    margin-top: 20px;
 }
 
 .project-card {
@@ -134,7 +155,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 1s ease;
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover {
@@ -173,10 +194,7 @@
         grid-template-columns: 1fr;
     }
 
-    .div13,
-    .div14,
-    .div16,
-    .div17 {
+    .div13, .div14, .div16, .div17 {
         grid-column: span 1;
         grid-row: span 1;
     }
@@ -184,4 +202,66 @@
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+
+
+
+/* Timeline Stilovi */
+.timeline-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 10px;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    position: relative;
+    border-left: 3px solid #1B2631; /* Vertikalna linija */
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+/* Kružić na liniji */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 4px;
+    width: 13px;
+    height: 13px;
+    background-color: #3F4E4F;
+    border: 3px solid #A5C8D6;
+    border-radius: 50%;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-weight: bold;
+    color: #1B2631;
+    font-size: 0.9em;
+    margin-bottom: 4px;
+}
+
+.timeline-content {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 12px 15px;
+    border-radius: 6px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #1B2631;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #2C3E50;
 }
