@@ -1,3 +1,10 @@
+/* ==========================================
+   1. Osnovni stilovi i Izgled (Reset & Layout)
+   ========================================== */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #A5C8D6;
     min-height: 100vh;
@@ -14,7 +21,6 @@ main {
     width: 100%;
     margin: 0 auto;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 footer {
@@ -30,6 +36,42 @@ footer p {
     font-size: 0.9em;
 }
 
+/* ==========================================
+   2. Navigacija i Zaglavlje
+   ========================================== */
+.navbar {
+    background-color: #1B2631;
+    padding: 15px;
+    text-align: center;
+}
+
+.nav-link {
+    color: #A5C8D6;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.git, .pravila-privatnosti {
+    font-size: 1em;
+    color: #A5C8D6;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.git:hover, .pravila-privatnosti:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   3. Tipografija i Slike
+   ========================================== */
 .name {
     font-size: 1.5rem;
     margin: 0 0 10px 0;
@@ -61,38 +103,12 @@ footer p {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.navbar {
-    background-color: #1B2631;
-    padding: 15px;
-    text-align: center;
-}
-
-.nav-link {
-    color: #A5C8D6;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.2s;
-}
-
-.nav-link:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.git, .pravila-privatnosti {
-    font-size: 1em;
-    color: #A5C8D6;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.git:hover, .pravila-privatnosti:hover {
-    color: #ffffff;
-}
-
+/* ==========================================
+   4. Forma i Kontakt
+   ========================================== */
 .kontakt-sadrzaj {
     max-width: 600px;
     margin: 0 auto;
@@ -111,7 +127,6 @@ form textarea {
     padding: 10px;
     border: 1px solid #1B2631;
     border-radius: 4px;
-    box-sizing: border-box;
     margin-top: 5px;
 }
 
@@ -131,6 +146,9 @@ form button:hover {
     background-color: #3F4E4F;
 }
 
+/* ==========================================
+   5. Grid Izgled (Parent Layout)
+   ========================================== */
 .parent {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -143,35 +161,34 @@ form button:hover {
 .div16 { grid-column: 1; }
 .div17 { grid-column: 2; grid-row: span 2; }
 
+/* ==========================================
+   6. Projekti i Modal
+   ========================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
 .project-card {
-    background-color: #fff;
-    border-radius: 8px;
+    cursor: pointer;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    background: #1B2631;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.03);
 }
 
-.project-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.project-card img {
+.project-img {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    display: block;
 }
 
 .project-info {
@@ -181,32 +198,75 @@ form button:hover {
 .project-info h3 {
     margin: 0 0 10px 0;
     font-size: 1.2rem;
+    color: #ffffff;
 }
 
 .project-info p {
     margin: 0;
     font-size: 0.95rem;
-    color: #666;
+    color: #A5C8D6;
 }
 
-@media (max-width: 768px) {
-    .parent {
-        grid-template-columns: 1fr;
-    }
-
-    .div13, .div14, .div16, .div17 {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+/* Modal (Popup) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
+.modal-content {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    color: #1B2631;
+}
 
+.modal-content img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
 
-/* Timeline Stilovi */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #1B2631;
+}
+
+.modal-link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1B2631;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.modal-link-btn:hover {
+    background-color: #3F4E4F;
+}
+
+/* ==========================================
+   7. Timeline Stilovi
+   ========================================== */
 .timeline-container {
     max-width: 800px;
     margin: 30px auto;
@@ -218,7 +278,7 @@ form button:hover {
     padding: 0;
     margin: 20px 0;
     position: relative;
-    border-left: 3px solid #1B2631; /* Vertikalna linija */
+    border-left: 3px solid #1B2631;
 }
 
 .timeline-item {
@@ -227,7 +287,6 @@ form button:hover {
     margin-bottom: 25px;
 }
 
-/* Kružić na liniji */
 .timeline-item::before {
     content: '';
     position: absolute;
@@ -264,4 +323,81 @@ form button:hover {
     margin: 0;
     font-size: 0.95em;
     color: #2C3E50;
+}
+
+/* ==========================================
+   8. Automatski Slideshow (Čistiji stil)
+   ========================================== */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
+}
+
+.text {
+    color: #ffffff;
+    font-size: 15px;
+    padding: 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.numbertext {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom-right-radius: 6px;
+}
+
+/* Animacija pretapanja slika */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.2s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* ==========================================
+   9. Responsiveness (Mobilni uređaji)
+   ========================================== */
+@media (max-width: 768px) {
+    .parent {
+        grid-template-columns: 1fr;
+    }
+
+    .div13, .div14, .div16, .div17 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mySlides img {
+        height: 220px;
+    }
 }

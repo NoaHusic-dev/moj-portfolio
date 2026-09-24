@@ -7,7 +7,6 @@
     <title>Projekti</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -19,19 +18,79 @@
             <a class="nav-link" href="kontakt.html">Kontakt</a>
         </nav>
     </header>
+
     <main>
         <div class="projekti-sadrzaj">
-            <h1 class="h1-opis"><br><br>Projekti</h1>
-            <h3 class="h3-opis">Stranica je u razvoju</h3>
+            <h1 class="h1-opis">Projekti:</h1>
+            <p class="h3-opis">Klikni na sliku projekta za više detalja.</p>
+
+            <!-- Mreža sa slikama projekata -->
+            <div class="projects-grid">
+                
+                <!-- PRIMJER PROJEKTA 1 (Promijeni podatke i sliku) -->
+                <div class="project-card" 
+                     data-title="Lorem Ipsum" 
+                     data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
+                     data-link="https://github.com/NoaHusic-dev">
+                    <img src="./images/images-of-projects/" alt="Projekt 1" class="project-img">
+                </div>
+            </div>
         </div>
     </main>
 
+    <!-- Modal (Pop-up prozor) -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modalImg" src="" alt="Projekt slika">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <a id="modalLink" href="#" target="_blank" class="modal-link-btn">Otvori na GitHubu</a>
+        </div>
+    </div>
+
     <footer>
-        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank">GitHub <i class="fa fa-github"
-                style="font-size:24px"></i></a>
+        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank">GitHub <i class="fa fa-github" style="font-size:24px"></i></a>
         <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank">Pravila privatnosti</a>
         <p>&copy; Noa Husić | Sva prava pridržana</p>
     </footer>
+
+    <!-- JS Skripta za Pop-up -->
+    <script>
+        const cards = document.querySelectorAll('.project-card');
+        const modal = document.getElementById('projectModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDescription');
+        const modalLink = document.getElementById('modalLink');
+        const closeBtn = document.querySelector('.close-btn');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('img').src;
+                const title = card.getAttribute('data-title');
+                const desc = card.getAttribute('data-description');
+                const link = card.getAttribute('data-link');
+
+                modalImg.src = img;
+                modalTitle.textContent = title;
+                modalDesc.textContent = desc;
+                modalLink.href = link;
+
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>
