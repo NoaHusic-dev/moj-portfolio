@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #A5C8D6;
+    background-color: #65a5be;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -332,7 +332,7 @@ form button:hover {
     max-width: 1000px;
     position: relative;
     margin: 20px auto;
-    border-radius: 10px;
+    border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
@@ -342,10 +342,11 @@ form button:hover {
 }
 
 .mySlides img {
-    border-radius: 10px;
+    border-radius: 25px;
     object-fit: cover;
     height: 350px;
     width: 100%;
+
 }
 
 .text {
@@ -366,7 +367,7 @@ form button:hover {
     position: absolute;
     top: 0;
     background: rgba(0, 0, 0, 0.4);
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 25px;
 }
 
 /* Animacija pretapanja slika */
