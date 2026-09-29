@@ -332,7 +332,7 @@ form button:hover {
     max-width: 1000px;
     position: relative;
     margin: 20px auto;
-    border-radius: 25px;
+    border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
@@ -342,7 +342,7 @@ form button:hover {
 }
 
 .mySlides img {
-    border-radius: 25px;
+    border-radius: 6px;
     object-fit: cover;
     height: 350px;
     width: 100%;
@@ -367,7 +367,7 @@ form button:hover {
     position: absolute;
     top: 0;
     background: rgba(0, 0, 0, 0.4);
-    border-bottom-right-radius: 25px;
+    border-bottom-right-radius: 6px;
 }
 
 /* Animacija pretapanja slika */
