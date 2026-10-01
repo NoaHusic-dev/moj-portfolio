@@ -324,63 +324,6 @@ form button:hover {
     font-size: 0.95em;
     color: #2C3E50;
 }
-
-/* ==========================================
-   8. Automatski Slideshow (Čistiji stil)
-   ========================================== */
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: 20px auto;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.mySlides {
-    display: none;
-}
-
-.mySlides img {
-    border-radius: 6px;
-    object-fit: cover;
-    height: 350px;
-    width: 100%;
-
-}
-
-.text {
-    color: #ffffff;
-    font-size: 15px;
-    padding: 12px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.numbertext {
-    color: #ffffff;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.4);
-    border-bottom-right-radius: 6px;
-}
-
-/* Animacija pretapanja slika */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.2s;
-}
-
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
-
 /* ==========================================
    9. Responsiveness (Mobilni uređaji)
    ========================================== */
@@ -402,3 +345,41 @@ form button:hover {
         height: 220px;
     }
 }
+/* ===========================================
+Marque tekst s desna na lijevo
+*/
+/* Spremnik skriva tekst koji izlazi izvan okvira */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background-color: #65a5be;
+    padding: 10px 0;
+    border: 1px solid #65a5be;
+  }
+  
+  /* Stil i animacija samog teksta */
+  .marquee-text {
+    display: inline-block;
+    padding-left: 100%; /* Počinje izvan desnog ruba ekrana */
+    animation: pomakniTekst 10s linear infinite;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Definiranje animacije: s desna (100%) prema lijevo (-100%) */
+  @keyframes pomakniTekst {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+  
+  /* (Opcionalno) Zaustavi kretanje kada korisnik pređe mišem preko teksta */
+  .marquee-container:hover .marquee-text {
+    animation-play-state: paused;
+  }
