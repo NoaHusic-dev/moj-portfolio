@@ -1,50 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekti</title>
+    <meta name="description" content="Uvjeti korištenja i pravila privatnosti portfolio stranice Noe Husića.">
+    <title>Pravila privatnosti | Noa Husić</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <h1 class="name">Noa Husić</h1>
+        <nav class="navbar" aria-label="Glavna navigacija">
             <a class="nav-link" href="index.html">Početna</a>
             <a class="nav-link" href="projekti.html">Projekti</a>
             <a class="nav-link" href="kontakt.html">Kontakt</a>
         </nav>
+
+        <section class="hero">
+            <h1 class="name">Pravila privatnosti</h1>
+            <p class="hero-opis">Uvjeti korištenja stranice i način na koji postupam s vašim podacima.</p>
+        </section>
     </header>
+
     <main>
+        <div class="pravni-sadrzaj">
+            <section class="card" id="uvjeti">
+                <h2 class="h2-opis">Uvjeti korištenja</h2>
+                <p>Dobrodošli na moj portfolio. Korištenjem ove stranice slažete se s ovim uvjetima:</p>
+                <ul>
+                    <li>Svi radovi su moje autorsko djelo. Zabranjeno je kopiranje i distribucija bez dozvole.</li>
+                    <li>Stranica služi isključivo u informativne svrhe prezentacije mog rada.</li>
+                    <li>Sadržaj na poveznicama prema <strong>GitHubu</strong> podliježe njihovim vlastitim uvjetima korištenja.</li>
+                </ul>
+            </section>
 
-    <section>
-        <h2 class="h2-opis">Uvjeti korištenja</h2>
-        <p>Dobrodošli na moj portfolio. Korištenjem ove stranice slažete se s ovim uvjetima:</p>
-        <ul>
-            <li>Svi radovi su moje autorsko djelo. Zabranjeno je kopiranje i distribucija bez dozvole.</li>
-            <li>Stranica služi isključivo u informativne svrhe prezentacije mog rada.</li>
-            <li>Sadržaj na poveznicama prema <strong>GitHubu</strong> podliježe njihovim vlastitim uvjetima korištenja.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2 class="h2-opis">Pravila privatnosti</h2>
-        <p><strong>Upravlja:</strong> Noa Husić<br>
-        <strong>Kontakt:</strong> <a href="mailto:noahusicdev@gmail.com">noahusicdev@gmail.com</a></p>
-
-        <p>Ova stranica ne koristi kolačiće za praćenje niti alate za analitiku.</p>
-        <p>Podatke koje mi pošaljete putem kontakt forme (ime, e-mail, poruka) koristim isključivo radi odgovaranja na vaš upit. Vaši podaci se ne dijele s trećim stranama.</p>
-    </section>
+            <section class="card" id="privatnost">
+                <h2 class="h2-opis">Pravila privatnosti</h2>
+                <p class="pravni-podaci">
+                    <strong>Upravlja:</strong> Noa Husić<br>
+                    <strong>Kontakt:</strong> <a href="mailto:noahusicdev@gmail.com">noahusicdev@gmail.com</a>
+                </p>
+                <p>Ova stranica ne koristi kolačiće za praćenje niti alate za analitiku.</p>
+                <p>Podatke koje mi pošaljete putem kontakt forme (ime, e-mail, poruka) koristim isključivo radi odgovaranja na vaš upit. Vaši podaci se ne dijele s trećim stranama.</p>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank">GitHub <i class="fa fa-github"
-                style="font-size:24px"></i></a>
-        <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank">Pravila privatnosti</a>
+        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank" rel="noopener">GitHub <i class="fa fa-github" style="font-size:24px" aria-hidden="true"></i></a>
+        <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank" rel="noopener">Pravila privatnosti</a>
         <p>&copy; Noa Husić | Sva prava pridržana</p>
     </footer>
 </body>

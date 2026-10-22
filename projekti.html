@@ -1,61 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projekti</title>
+    <meta name="description" content="Projekti Noe Husića: web stranice i programiranje.">
+    <title>Projekti | Noa Husić</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <h1 class="name">Noa Husić</h1>
+        <nav class="navbar" aria-label="Glavna navigacija">
             <a class="nav-link" href="index.html">Početna</a>
-            <a class="nav-link" href="projekti.html">Projekti</a>
+            <a class="nav-link" href="projekti.html" aria-current="page">Projekti</a>
             <a class="nav-link" href="kontakt.html">Kontakt</a>
         </nav>
+
+        <section class="hero">
+            <h1 class="name">Projekti</h1>
+            <p class="hero-opis">Odaberite projekt za više detalja i poveznicu na izvorni kod.</p>
+        </section>
     </header>
 
     <main>
         <div class="projekti-sadrzaj">
-            <h1 class="h1-opis">Projekti:</h1>
-            <p class="h3-opis">Klikni na sliku projekta za više detalja.</p>
-
-            <!-- Mreža sa slikama projekata -->
             <div class="projects-grid">
-                
-                <!-- PRIMJER PROJEKTA 1 (Promijeni podatke i sliku) -->
-                <div class="project-card" 
-                     data-title="Lorem Ipsum" 
-                     data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
-                     data-link="https://github.com/NoaHusic-dev">
-                    <img src="./images/images-of-projects/" alt="Projekt 1" class="project-img">
-                </div>
+
+                <!-- PROJEKT 1 (zamijeni naslov, opise, poveznicu i sliku).
+                     Za novi projekt kopiraj cijeli blok <article> i promijeni podatke. -->
+                <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Naziv projekta"
+                    data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    data-link="https://github.com/NoaHusic-dev">
+                    <img src="./images/images-of-projects/projekt-1.png" alt="Pregled projekta: Naziv projekta" class="project-img">
+                    <div class="project-info">
+                        <h3>Naziv projekta</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </article>
+
             </div>
         </div>
     </main>
 
-    <!-- Modal (Pop-up prozor) -->
-    <div id="projectModal" class="modal">
+    <!-- Modal (pop-up prozor) -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <img id="modalImg" src="" alt="Projekt slika">
+            <span class="close-btn" role="button" tabindex="0" aria-label="Zatvori">&times;</span>
+            <img id="modalImg" src="" alt="">
             <h2 id="modalTitle"></h2>
             <p id="modalDescription"></p>
-            <a id="modalLink" href="#" target="_blank" class="modal-link-btn">Otvori na GitHubu</a>
+            <a id="modalLink" href="#" target="_blank" rel="noopener" class="modal-link-btn">Otvori na GitHubu</a>
         </div>
     </div>
 
     <footer>
-        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank">GitHub <i class="fa fa-github" style="font-size:24px"></i></a>
-        <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank">Pravila privatnosti</a>
+        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank" rel="noopener">GitHub <i class="fa fa-github" style="font-size:24px" aria-hidden="true"></i></a>
+        <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank" rel="noopener">Pravila privatnosti</a>
         <p>&copy; Noa Husić | Sva prava pridržana</p>
     </footer>
 
-    <!-- JS Skripta za Pop-up -->
     <script>
         const cards = document.querySelectorAll('.project-card');
         const modal = document.getElementById('projectModal');
@@ -64,31 +70,50 @@
         const modalDesc = document.getElementById('modalDescription');
         const modalLink = document.getElementById('modalLink');
         const closeBtn = document.querySelector('.close-btn');
+        let lastFocused = null;
+
+        function openModal(card) {
+            const img = card.querySelector('img');
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modalTitle.textContent = card.dataset.title;
+            modalDesc.textContent = card.dataset.description;
+            modalLink.href = card.dataset.link;
+
+            lastFocused = card;
+            modal.style.display = 'flex';
+            closeBtn.focus();
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            if (lastFocused) lastFocused.focus();
+        }
 
         cards.forEach(card => {
-            card.addEventListener('click', () => {
-                const img = card.querySelector('img').src;
-                const title = card.getAttribute('data-title');
-                const desc = card.getAttribute('data-description');
-                const link = card.getAttribute('data-link');
-
-                modalImg.src = img;
-                modalTitle.textContent = title;
-                modalDesc.textContent = desc;
-                modalLink.href = link;
-
-                modal.style.display = 'flex';
+            card.addEventListener('click', () => openModal(card));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(card);
+                }
             });
         });
 
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
+        closeBtn.addEventListener('click', closeModal);
+        closeBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                closeModal();
+            }
         });
 
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
         });
     </script>
 </body>
