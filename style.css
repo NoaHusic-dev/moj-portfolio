@@ -1,5 +1,5 @@
 /* ==========================================
-   0. Fontovi i varijable
+   Varijable i osnova
    ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
@@ -7,69 +7,45 @@
     --bg: #0a1016;
     --bg-2: #0f1822;
     --surface: #141f2b;
-    --surface-2: #1a2836;
     --border: rgba(165, 200, 214, 0.14);
     --text: #e6eef3;
     --text-soft: #9fb3c0;
     --accent: #5ec8e5;
     --accent-2: #8fe3c8;
     --accent-ink: #04222b;
+    --accent-bg: rgba(94, 200, 229, 0.1);
+    --accent-line: rgba(94, 200, 229, 0.3);
     --radius: 14px;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
-    --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.5);
-    --glow: 0 0 0 1px rgba(94, 200, 229, 0.45), 0 10px 30px rgba(94, 200, 229, 0.15);
-    --ease: 0.25s ease;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     --font-head: 'Space Grotesk', system-ui, sans-serif;
-    --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
 }
 
-/* ==========================================
-   1. Osnovni stilovi i Izgled
-   ========================================== */
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; color-scheme: dark; }
 
 body {
-    background:
-        radial-gradient(900px 500px at 85% -10%, rgba(94, 200, 229, 0.14), transparent 60%),
-        radial-gradient(700px 400px at -10% 20%, rgba(143, 227, 200, 0.08), transparent 60%),
-        var(--bg);
-    background-attachment: fixed;
+    margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: 0;
+    background:
+        radial-gradient(900px 500px at 85% -10%, rgba(94, 200, 229, 0.14), transparent 60%),
+        var(--bg);
+    background-attachment: fixed;
     font-family: var(--font-body);
-    font-size: 1.02rem;
     line-height: 1.7;
     color: var(--text);
 }
 
 main {
     flex: 1;
-    max-width: 1000px;
     width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
 }
-
-footer {
-    text-align: center;
-    padding: 32px 20px;
-    background-color: var(--bg-2);
-    border-top: 1px solid var(--border);
-    color: var(--text);
-    margin-top: 56px;
-}
-
-footer p {
-    margin: 10px 0 0 0;
-    font-size: 0.9em;
-    color: var(--text-soft);
-}
-
-::selection { background: var(--accent); color: var(--accent-ink); }
 
 :focus-visible {
     outline: 2px solid var(--accent);
@@ -78,7 +54,7 @@ footer p {
 }
 
 /* ==========================================
-   2. Navigacija i Zaglavlje
+   Navigacija, hero, footer
    ========================================== */
 .navbar {
     position: sticky;
@@ -88,485 +64,120 @@ footer p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px 8px;
-    background-color: rgba(10, 16, 22, 0.75);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
     padding: 12px 15px;
+    background: rgba(10, 16, 22, 0.75);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-link {
-    font-family: var(--font-head);
-    color: var(--text-soft);
-    text-decoration: none;
     padding: 8px 16px;
     border-radius: 999px;
+    font-family: var(--font-head);
     font-weight: 500;
-    letter-spacing: 0.01em;
-    transition: color var(--ease), background-color var(--ease);
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 0.25s, background-color 0.25s;
 }
 
 .nav-link:hover {
     color: var(--accent);
-    background-color: rgba(94, 200, 229, 0.1);
+    background: var(--accent-bg);
 }
 
-.git, .pravila-privatnosti {
-    font-size: 1em;
-    color: var(--text-soft);
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color var(--ease);
-}
-
-.git:hover, .pravila-privatnosti:hover {
-    color: var(--accent);
-}
-
-/* ==========================================
-   3. Tipografija i Slike
-   ========================================== */
-.name {
-    font-family: var(--font-head);
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    margin: 0 0 12px 0;
-    color: var(--text);
-}
-
-.h1-opis, .h2-opis {
-    font-family: var(--font-head);
-    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
-    line-height: 1.2;
-    letter-spacing: -0.015em;
-    color: var(--text);
-    text-align: left;
-    font-weight: 600;
-    margin: 28px 0 12px;
-}
-
-.h3-opis {
-    font-size: 1.05em;
-    color: var(--text-soft);
-    text-align: left;
-    font-weight: 400;
-    line-height: 1.75;
-    max-width: 65ch;
-    margin: 0;
+.hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 8px;
+    text-align: center;
 }
 
 .slika {
     display: block;
-    margin: 28px auto 0 auto;
     width: 170px;
     height: 170px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--bg);
-    box-shadow: 0 0 0 3px var(--accent), 0 0 40px rgba(94, 200, 229, 0.3);
-}
-
-/* ==========================================
-   4. Forma i Kontakt
-   ========================================== */
-.kontakt-sadrzaj {
-    max-width: 600px;
     margin: 0 auto;
-}
-
-form {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    margin-top: 24px;
-}
-
-form label {
-    font-weight: 500;
-    color: var(--text);
-}
-
-form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 13px 15px;
-    border: 1px solid var(--border);
-    background-color: var(--bg);
-    border-radius: 10px;
-    margin-top: 8px;
-    font: inherit;
-    color: var(--text);
-    transition: border-color var(--ease), box-shadow var(--ease);
-}
-
-form input[type="email"]::placeholder,
-form textarea::placeholder {
-    color: #5f7686;
-}
-
-form input[type="email"]:focus,
-form textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(94, 200, 229, 0.18);
-}
-
-form textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-form button {
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: var(--accent-ink);
-    border: none;
-    padding: 13px 28px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: var(--font-head);
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 20px;
-    transition: transform var(--ease), box-shadow var(--ease);
-}
-
-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(94, 200, 229, 0.3);
-}
-
-form button:active { transform: translateY(0); }
-
-/* ==========================================
-   5. Grid Izgled (Parent Layout)
-   ========================================== */
-.parent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 24px;
-}
-
-.div13 { grid-column: span 2; }
-.div14 { grid-column: 1; }
-.div16 { grid-column: 1; }
-.div17 { grid-column: 2; grid-row: span 2; }
-
-/* ==========================================
-   6. Projekti i Modal
-   ========================================== */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
-}
-
-.project-card {
-    cursor: pointer;
-    overflow: hidden;
-    isolation: isolate;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    background: var(--surface);
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    border-color: transparent;
-    box-shadow: var(--glow);
-}
-
-.project-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-img {
-    transform: scale(1.06);
-}
-
-.project-info {
-    padding: 18px 20px 20px;
-}
-
-.project-info h3 {
-    font-family: var(--font-head);
-    margin: 0 0 8px 0;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.project-info p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--text-soft);
-}
-
-/* Modal (Popup) */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(4, 8, 12, 0.8);
-    backdrop-filter: blur(6px);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    padding: 16px;
-}
-
-.modal-content {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    padding: 28px;
-    border-radius: 18px;
-    max-width: 520px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    text-align: center;
-    color: var(--text);
-    box-shadow: var(--shadow-md);
-    animation: modalIn 0.25s ease;
-}
-
-@keyframes modalIn {
-    from { opacity: 0; transform: translateY(14px) scale(0.97); }
-    to   { opacity: 1; transform: none; }
-}
-
-.modal-content img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 16px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    font-size: 26px;
-    line-height: 1;
-    cursor: pointer;
-    color: var(--text-soft);
     border-radius: 50%;
-    transition: background-color var(--ease), color var(--ease);
+    object-fit: cover;
 }
 
-.close-btn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    color: var(--text);
-}
-
-.modal-link-btn {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 12px 26px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: var(--accent-ink);
-    text-decoration: none;
-    border-radius: 10px;
+.name {
+    margin: 0 0 8px;
     font-family: var(--font-head);
-    font-weight: 600;
-    transition: transform var(--ease), box-shadow var(--ease);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
-.modal-link-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(94, 200, 229, 0.3);
-}
-
-/* ==========================================
-   7. Timeline Stilovi
-   ========================================== */
-.timeline-container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 0 10px;
-}
-
-.timeline {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 20px 8px;
-    position: relative;
-    border-left: 2px solid var(--border);
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 28px;
-}
-
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -9px;
-    top: 5px;
-    width: 16px;
-    height: 16px;
-    background-color: var(--bg);
-    border: 3px solid var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 14px rgba(94, 200, 229, 0.55);
-}
-
-.timeline-date {
-    display: inline-block;
-    font-family: var(--font-head);
-    font-weight: 600;
-    color: var(--accent);
-    font-size: 0.9em;
-    margin-bottom: 6px;
-}
-
-.timeline-content {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    padding: 16px 20px;
-    border-radius: 12px;
-}
-
-.timeline-content h3 {
-    font-family: var(--font-head);
-    margin: 0 0 5px 0;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.timeline-content p {
-    margin: 0;
-    font-size: 0.95em;
-    color: var(--text-soft);
-}
-
-/* ==========================================
-   8. Marquee (tekst s desna na lijevo)
-   ========================================== */
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    background-color: var(--bg-2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 12px 0;
-}
-
-.marquee-text {
-    display: inline-block;
-    padding-left: 100%;
-    animation: pomakniTekst 18s linear infinite;
-    font-family: var(--font-head);
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--accent);
-}
-
-@keyframes pomakniTekst {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-.marquee-container:hover .marquee-text {
-    animation-play-state: paused;
-}
-
-/* ==========================================
-   9. Responsive (mobilni uređaji)
-   ========================================== */
-@media (max-width: 768px) {
-    main { padding: 24px 16px; }
-
-    .parent { grid-template-columns: 1fr; }
-
-    .div13, .div14, .div16, .div17 {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .projects-grid { grid-template-columns: 1fr; }
-
-    .mySlides img { height: 220px; }
-}
-
-/* ==========================================
-   10. Pristupačnost: smanjeno kretanje
-   ========================================== */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-    }
-    html { scroll-behavior: auto; }
-    .marquee-text { padding-left: 0; }
-}
-
-/* ==========================================
-   11. Dodatci za profesionalniji index.html
-   ========================================== */
-.hero {
-    text-align: center;
-    padding: 48px 20px 8px;
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-.hero .slika { margin-top: 0; }
-
-.hero .name { margin-top: 24px; margin-bottom: 8px; }
+.slika + .name { margin-top: 24px; }
 
 .hero-podnaslov {
     margin: 0;
+    font-family: var(--font-head);
     font-size: 1.1rem;
     color: var(--accent);
-    font-family: var(--font-head);
-    font-weight: 500;
 }
 
 .hero-opis {
-    margin: 14px auto 0;
     max-width: 55ch;
+    margin: 14px auto 0;
     color: var(--text-soft);
 }
 
-.card {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px 26px;
-    box-shadow: var(--shadow-sm);
+footer {
+    margin-top: 56px;
+    padding: 32px 20px;
+    text-align: center;
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
 }
 
-.card .h1-opis, .card .h2-opis { margin-top: 0; }
+footer p {
+    margin: 10px 0 0;
+    font-size: 0.9em;
+    color: var(--text-soft);
+}
 
-.card ul.h3-opis {
+.git, .pravila-privatnosti {
+    margin: 0 10px;
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: color 0.25s;
+}
+
+.git:hover, .pravila-privatnosti:hover { color: var(--accent); }
+
+/* ==========================================
+   Kartice i tekst
+   ========================================== */
+.card {
+    padding: 24px 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.h2-opis {
+    margin: 0 0 12px;
+    font-family: var(--font-head);
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+}
+
+.h3-opis {
+    margin: 0;
+    color: var(--text-soft);
+}
+
+ul.h3-opis, .card ul {
     padding-left: 1.2em;
     display: grid;
     gap: 10px;
 }
 
-.card ul.h3-opis li::marker { color: var(--accent); }
+li::marker { color: var(--accent); }
 
 .chips {
     list-style: none;
@@ -582,70 +193,97 @@ form button:active { transform: translateY(0); }
     border-radius: 999px;
     font-size: 0.9rem;
     color: var(--accent);
-    background-color: rgba(94, 200, 229, 0.1);
-    border: 1px solid rgba(94, 200, 229, 0.3);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-line);
 }
 
-.timeline-content ul {
-    margin: 8px 0 0;
-    padding-left: 1.2em;
+/* Početna: mreža kartica (2 stupca, iste visine) */
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.parent > .siroko { grid-column: 1 / -1; }
+
+/* Timeline */
+.timeline-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.timeline {
+    list-style: none;
+    margin: 20px 0 0 8px;
+    padding: 0;
+    border-left: 2px solid var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+    padding-left: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--bg);
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 14px rgba(94, 200, 229, 0.55);
+}
+
+.timeline-date {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.9em;
+    color: var(--accent);
+}
+
+.timeline-content {
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px;
+    font-family: var(--font-head);
+    font-size: 1.1em;
+}
+
+.timeline-content p, .timeline-content ul {
+    margin: 0;
     font-size: 0.95em;
     color: var(--text-soft);
 }
 
-.timeline-content ul li { margin-bottom: 4px; }
-.timeline-content ul li::marker { color: var(--accent); }
-.timeline-content p + ul { margin-top: 10px; }
+.timeline-content ul { margin-top: 10px; gap: 4px; }
 
 /* ==========================================
-   12. Ujednačen raspored kartica (2 stupca, iste visine)
-   ========================================== */
-.parent {
-    align-items: stretch;
-}
-
-.parent > .card {
-    grid-column: auto;
-    grid-row: auto;
-    margin: 0;
-}
-
-.parent > .card.siroko {
-    grid-column: 1 / -1;
-}
-
-.parent > .card .h3-opis {
-    max-width: none;
-}
-
-@media (max-width: 768px) {
-    .parent > .card,
-    .parent > .card.siroko {
-        grid-column: auto;
-    }
-}
-
-/* ==========================================
-   13. Kontakt stranica
+   Kontakt
    ========================================== */
 .kontakt-sadrzaj {
     max-width: 900px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1.6fr;
     gap: 24px;
     align-items: start;
 }
 
-.kontakt-sadrzaj form {
-    margin-top: 0;
-}
-
-.kontakt-info .h2-opis { margin-bottom: 16px; }
-
 .kontakt-popis {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: grid;
     gap: 16px;
 }
@@ -662,38 +300,67 @@ form button:active { transform: translateY(0); }
     height: 42px;
     display: grid;
     place-items: center;
-    border-radius: 12px;
     font-size: 20px;
     color: var(--accent);
-    background-color: rgba(94, 200, 229, 0.1);
-    border: 1px solid rgba(94, 200, 229, 0.3);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-line);
+    border-radius: 12px;
 }
 
 .kontakt-oznaka {
     display: block;
     font-size: 0.85rem;
-    color: var(--text-soft);
     line-height: 1.3;
+    color: var(--text-soft);
 }
 
 .kontakt-popis a {
     color: var(--text);
     text-decoration: none;
     overflow-wrap: anywhere;
-    transition: color var(--ease);
 }
 
 .kontakt-popis a:hover { color: var(--accent); }
 
+form {
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
 .polje { margin-bottom: 20px; }
+
+form label { font-weight: 500; }
+
+form input[type="email"], form textarea {
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px 15px;
+    font: inherit;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+form input[type="email"]:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(94, 200, 229, 0.18);
+}
+
+form textarea { min-height: 140px; resize: vertical; }
 
 .privola {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     font-size: 0.95rem;
-    color: var(--text-soft);
     font-weight: 400;
+    color: var(--text-soft);
 }
 
 .privola input {
@@ -704,32 +371,74 @@ form button:active { transform: translateY(0); }
     accent-color: var(--accent);
 }
 
-.privola a { color: var(--accent); }
+.privola a, .pravni-sadrzaj a { color: var(--accent); }
 
-@media (max-width: 768px) {
-    .kontakt-sadrzaj { grid-template-columns: 1fr; }
+/* Gumbi */
+form button, .modal-link-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-ink);
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+form button:hover, .modal-link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(94, 200, 229, 0.3);
 }
 
 /* ==========================================
-   14. Projekti stranica
+   Projekti i modal
    ========================================== */
-.projekti-sadrzaj .h3-opis { max-width: none; }
-
-.project-card { text-align: left; }
-
-.project-img {
-    background: linear-gradient(135deg, var(--surface-2), var(--bg-2));
-    color: var(--text-soft);
-    font-size: 0.9rem;
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
 }
 
-.project-card:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-    box-shadow: var(--glow);
+.project-card {
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.project-card:hover, .project-card:focus-visible {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+}
+
+.project-img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: var(--bg-2);
+}
+
+.project-info { padding: 18px 20px 20px; }
+
+.project-info h3 {
+    margin: 0 0 8px;
+    font-family: var(--font-head);
+    font-size: 1.15rem;
 }
 
 .project-info p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-soft);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
@@ -737,21 +446,69 @@ form button:active { transform: translateY(0); }
     overflow: hidden;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(4, 8, 12, 0.8);
+    backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 250px;
+    margin-bottom: 16px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .modal-content h2 {
+    margin: 0 0 10px;
     font-family: var(--font-head);
     font-size: 1.5rem;
-    letter-spacing: -0.01em;
-    margin: 0 0 10px;
 }
 
 .modal-content p {
     margin: 0;
-    color: var(--text-soft);
     text-align: left;
+    color: var(--text-soft);
 }
 
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    font-size: 26px;
+    cursor: pointer;
+    color: var(--text-soft);
+    border-radius: 50%;
+}
+
+.close-btn:hover { color: var(--text); background: rgba(255, 255, 255, 0.08); }
+
 /* ==========================================
-   15. Pravila privatnosti / uvjeti korištenja
+   Pravila privatnosti
    ========================================== */
 .pravni-sadrzaj {
     max-width: 760px;
@@ -760,37 +517,41 @@ form button:active { transform: translateY(0); }
     gap: 24px;
 }
 
-.pravni-sadrzaj .card p,
-.pravni-sadrzaj .card li {
-    color: var(--text-soft);
-}
+.pravni-sadrzaj p { margin: 0 0 14px; }
+.pravni-sadrzaj p:last-child { margin-bottom: 0; }
+.pravni-sadrzaj li, .pravni-sadrzaj p { color: var(--text-soft); }
+.pravni-sadrzaj strong { color: var(--text); }
 
-.pravni-sadrzaj .card p { margin: 0 0 14px; }
-.pravni-sadrzaj .card p:last-child { margin-bottom: 0; }
-
-.pravni-sadrzaj .card strong { color: var(--text); font-weight: 600; }
-
-.pravni-sadrzaj .card ul {
-    margin: 0;
-    padding-left: 1.2em;
-    display: grid;
-    gap: 10px;
-}
-
-.pravni-sadrzaj .card li::marker { color: var(--accent); }
-
-.pravni-sadrzaj .card a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(94, 200, 229, 0.4);
-    transition: border-color var(--ease);
-}
-
-.pravni-sadrzaj .card a:hover { border-bottom-color: var(--accent); }
-
-.pravni-podaci {
+.pravni-sadrzaj .pravni-podaci {
     padding: 14px 18px;
-    border-radius: 10px;
-    background-color: var(--bg);
+    background: var(--bg);
     border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* ==========================================
+   Postupno prikazivanje pri skrolanju
+   ========================================== */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition-delay: var(--d, 0s);
+}
+
+.js .reveal.vidljivo {
+    opacity: 1;
+    transform: none;
+}
+
+/* ==========================================
+   Mobitel i smanjeno kretanje
+   ========================================== */
+@media (max-width: 768px) {
+    main { padding: 24px 16px; }
+    .parent, .kontakt-sadrzaj { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
 }
