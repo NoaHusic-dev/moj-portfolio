@@ -180,19 +180,33 @@ footer a:hover { border-color: var(--ink); }
 /* ---- Uski i uspravni ekrani ---- */
 @media (max-aspect-ratio: 1/1) {
   :root { --s: 1.7vw; }
-  header { padding: calc(3 * var(--s)) calc(5 * var(--s)) calc(1.6 * var(--s)); }
+
+  /* Zaglavlje: logo i izbornik u jednom redu */
+  header { padding: calc(3 * var(--s)) calc(5 * var(--s)) calc(1.6 * var(--s)); gap: calc(2 * var(--s)); }
   header::after { left: calc(5 * var(--s)); right: calc(5 * var(--s)); }
+  .logo { white-space: nowrap; font-size: 15px; }
+  nav { gap: calc(2.4 * var(--s)); }
+  nav a { white-space: nowrap; }
+  nav.mini { font-size: 10px; letter-spacing: 0.12em; }
+
   .cols { inset: calc(10 * var(--s)) calc(5 * var(--s)) 0; }
+
+  /* Hero */
   .stage { height: auto; min-height: 100svh; }
   .inner { position: relative; left: 0; top: 0; width: auto; height: auto; margin: 0; padding: calc(20 * var(--s)) calc(5 * var(--s)) calc(12 * var(--s)); display: flex; flex-direction: column; gap: calc(3 * var(--s)); }
   .inner > * { position: static; }
   .inner h1 { display: flex; flex-direction: column; gap: calc(1.5 * var(--s)); }
-  .inner .w { position: static; font-size: calc(17 * var(--s)); }
+  .inner .w { position: static; font-size: calc(12.5 * var(--s)); }
+  .hero-logo { align-self: flex-start; margin: calc(2 * var(--s)) 0 0; height: calc(12 * var(--s)); width: auto; max-width: 40%; }
   .cta { max-width: none; }
   .tr { text-align: left; }
+
+  /* Ostale stranice */
   .ph { padding: calc(20 * var(--s)) calc(5 * var(--s)) calc(5 * var(--s)); }
   .ph h1 { font-size: calc(11.5 * var(--s)); }
   .ph.long h1 { font-size: calc(9 * var(--s)); }
+
+  /* Sekcije */
   .sec { display: block; padding: calc(10 * var(--s)) calc(5 * var(--s)); }
   .lbl { margin-bottom: calc(3 * var(--s)); }
   .big { font-size: calc(6.4 * var(--s)); max-width: none; }
