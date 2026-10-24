@@ -1,82 +1,48 @@
 <!DOCTYPE html>
 <html lang="hr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kontaktirajte Noa Husića putem e-maila ili obrasca.">
-    <title>Kontakt | Noa Husić</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kontakt – Noa Husić</title>
+<meta name="description" content="Kontaktiraj Nou Husića.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"light"}catch(e){document.documentElement.dataset.theme="light"}</script>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <nav class="navbar" aria-label="Glavna navigacija">
-            <a class="nav-link" href="index.html">Početna</a>
-            <a class="nav-link" href="projekti.html">Projekti</a>
-            <a class="nav-link" href="kontakt.html" aria-current="page">Kontakt</a>
-        </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="hb0" x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur class="hb" stdDeviation="0 0"/></filter></defs></svg>
+<div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<header>
+  <a class="logo" href="index.html" aria-label="Početna">NoaHusic-dev</a>
+  <nav class="mini"><a href="projekti.html">Projekti</a><a href="index.html#o-meni">O meni</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav>
+</header>
+<main>
+<section class="ph">
+  <h1><span class="w" data-blur="7">Kontakt</span></h1>
+  <p class="lead rv">Imaš ideju, pitanje ili prijedlog suradnje? Napiši mi nekoliko rečenica.</p>
+</section>
+<section class="sec" style="padding-top:calc(4*var(--s))">
+  <div class="lbl rv side"><p class="mini">Pošalji poruku</p><p class="mini" style="margin-top:2em"><a href="https://github.com/NoaHusic-dev" rel="noopener">GitHub ↗</a></p></div>
+  <div class="bd rv" style="--d:.1s">
+    <!-- Zamijeni YOUR_FORM_ID svojim Formspree ID-jem -->
+    <form class="form" action="https://formspree.io/f/mqerznrn" method="POST" data-ajax>
+      <div class="fld"><label class="mini" for="email">E-pošta</label><input id="email" name="email" type="email" autocomplete="email" placeholder="ime@primjer.hr" required></div>
+      <div class="fld"><label class="mini" for="message">Poruka</label><textarea id="message" name="message" placeholder="Kako ti mogu pomoći?" required></textarea></div>
+      <label class="chk"><input type="checkbox" name="privacy" value="da" required><span>Pročitao/la sam <a href="pravila-privatnosti.html">pravila privatnosti</a> i pristajem da se moji podaci koriste za odgovor na ovaj upit.</span></label>
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="send mini" type="submit">Pošalji <span aria-hidden="true">→</span></button>
+      <p class="note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
 
-        <section class="hero">
-            <h1 class="name">Kontakt</h1>
-            <p class="hero-opis">Imate pitanje ili prijedlog? Javite mi se putem e-maila ili ispunite obrazac.</p>
-        </section>
-    </header>
-
-    <main>
-        <div class="kontakt-sadrzaj">
-            <section class="card kontakt-info">
-                <h2 class="h2-opis">Podaci</h2>
-                <ul class="kontakt-popis">
-                    <li>
-                        <span class="kontakt-ikona"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                        <div>
-                            <span class="kontakt-oznaka">E-mail</span>
-                            <a href="mailto:noahusicdev@gmail.com">noahusicdev@gmail.com</a>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="kontakt-ikona"><i class="fa fa-github" aria-hidden="true"></i></span>
-                        <div>
-                            <span class="kontakt-oznaka">GitHub</span>
-                            <a href="https://github.com/NoaHusic-dev" target="_blank" rel="noopener">NoaHusic-dev</a>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-
-            <form action="https://formspree.io/f/mqerznrn" method="POST">
-                <h2 class="h2-opis">Pošaljite poruku</h2>
-
-                <div class="polje">
-                    <label for="email">Vaša e-mail adresa</label>
-                    <input type="email" name="email" id="email" placeholder="ime@primjer.com" required>
-                </div>
-
-                <div class="polje">
-                    <label for="message">Vaša poruka</label>
-                    <textarea name="message" id="message" placeholder="Napišite poruku..." required></textarea>
-                </div>
-
-                <div class="polje">
-                    <label class="privola" for="pravila-privatnosti">
-                        <input type="checkbox" name="pravila-privatnosti" id="pravila-privatnosti" required>
-                        <span>Slažem se s <a href="pravila-privatnosti.html" target="_blank" rel="noopener">Pravilima privatnosti</a>.</span>
-                    </label>
-                </div>
-
-                <button type="submit">Pošalji poruku</button>
-            </form>
-        </div>
-    </main>
-
-    <footer>
-        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank" rel="noopener">GitHub <i class="fa fa-github" style="font-size:24px" aria-hidden="true"></i></a>
-        <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank" rel="noopener">Pravila privatnosti</a>
-        <p>&copy; Noa Husić | Sva prava pridržana</p>
-    </footer>
+<footer class="mini rv">
+  <span>© 2026 Noa Husić</span>
+  <span><a href="kontakt.html">Kontakt</a> &nbsp;/&nbsp; <a href="https://github.com/NoaHusic-dev" rel="noopener">GitHub</a> &nbsp;/&nbsp; <a href="pravila-privatnosti.html">Pravila privatnosti</a></span>
+</footer>
+<button class="tgl" id="theme" aria-label="Promijeni temu (svijetla / tamna)"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="9.5" cy="13" r="7"/><circle cx="16.5" cy="13" r="7"/></svg></button>
+<script src="script.js"></script>
 </body>
-
 </html>
