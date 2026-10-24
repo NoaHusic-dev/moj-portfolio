@@ -1,122 +1,42 @@
 <!DOCTYPE html>
 <html lang="hr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projekti Noe Husića: web stranice i programiranje.">
-    <title>Projekti | Noa Husić</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projekti – Noa Husić</title>
+<meta name="description" content="Odabrani projekti Noe Husića.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"light"}catch(e){document.documentElement.dataset.theme="light"}</script>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <nav class="navbar" aria-label="Glavna navigacija">
-            <a class="nav-link" href="index.html">Početna</a>
-            <a class="nav-link" href="projekti.html" aria-current="page">Projekti</a>
-            <a class="nav-link" href="kontakt.html">Kontakt</a>
-        </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="hb0" x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur class="hb" stdDeviation="0 0"/></filter></defs></svg>
+<div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<header>
+  <a class="logo" href="index.html" aria-label="Početna">NoaHusic-dev</a>
+  <nav class="mini"><a href="projekti.html" aria-current="page">Projekti</a><a href="index.html#o-meni">O meni</a><a href="kontakt.html">Kontakt</a></nav>
+</header>
+<main>
+<section class="ph">
+  <h1><span class="w" data-blur="7">Projekti</span></h1>
+  <p class="lead rv">Još nemam objavljenih projekata :( radim na tome.</p>
+</section>
+<section class="cards">
+    <!--
+    <article class="card rv"><p class="mini">01 &nbsp;/&nbsp; 2026</p><h2>Digitalni raspored sati</h2><p>Tablo za TV u školi: sat uživo, odbrojavanje do kraja sata, rotacija stranica i razredi obojeni po smjeru.</p><div class="tags"><span>Svelte</span><span>Go</span><span>Tailwind</span></div></article>
+    <article class="card rv"><p class="mini">02 &nbsp;/&nbsp; 2026</p><h2>Naziv projekta</h2><p>Kratak opis projekta: koji je problem, što si napravio i čime.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div></article>
+    <article class="card rv"><p class="mini">03 &nbsp;/&nbsp; 2026</p><h2>Naziv projekta</h2><p>Kratak opis projekta: koji je problem, što si napravio i čime.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div></article>
+    <article class="card rv"><p class="mini">04 &nbsp;/&nbsp; 2026</p><h2>Naziv projekta</h2><p>Kratak opis projekta: koji je problem, što si napravio i čime.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div></article>
+-->
+    </section>
+</main>
 
-        <section class="hero">
-            <h1 class="name">Projekti</h1>
-            <p class="hero-opis">Odaberite projekt za više detalja i poveznicu na izvorni kod.</p>
-        </section>
-    </header>
-
-    <main>
-        <div class="projekti-sadrzaj">
-            <div class="projects-grid">
-
-                <!-- PROJEKT 1 (zamijeni naslov, opise, poveznicu i sliku).
-                     Za novi projekt kopiraj cijeli blok <article> i promijeni podatke. -->
-                <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Naziv projekta"
-                    data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    data-link="https://github.com/NoaHusic-dev">
-                    <img src="./images/images-of-projects/projekt-1.png" alt="Pregled projekta: Naziv projekta" class="project-img">
-                    <div class="project-info">
-                        <h3>Naziv projekta</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </main>
-
-    <!-- Modal (pop-up prozor) -->
-    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-            <span class="close-btn" role="button" tabindex="0" aria-label="Zatvori">&times;</span>
-            <img id="modalImg" src="" alt="">
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-            <a id="modalLink" href="#" target="_blank" rel="noopener" class="modal-link-btn">Otvori na GitHubu</a>
-        </div>
-    </div>
-
-    <footer>
-        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank" rel="noopener">GitHub <i class="fa fa-github" style="font-size:24px" aria-hidden="true"></i></a>
-        <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank" rel="noopener">Pravila privatnosti</a>
-        <p>&copy; Noa Husić | Sva prava pridržana</p>
-    </footer>
-
-    <script>
-        const cards = document.querySelectorAll('.project-card');
-        const modal = document.getElementById('projectModal');
-        const modalImg = document.getElementById('modalImg');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDescription');
-        const modalLink = document.getElementById('modalLink');
-        const closeBtn = document.querySelector('.close-btn');
-        let lastFocused = null;
-
-        function openModal(card) {
-            const img = card.querySelector('img');
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-            modalTitle.textContent = card.dataset.title;
-            modalDesc.textContent = card.dataset.description;
-            modalLink.href = card.dataset.link;
-
-            lastFocused = card;
-            modal.style.display = 'flex';
-            closeBtn.focus();
-        }
-
-        function closeModal() {
-            modal.style.display = 'none';
-            if (lastFocused) lastFocused.focus();
-        }
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => openModal(card));
-            card.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openModal(card);
-                }
-            });
-        });
-
-        closeBtn.addEventListener('click', closeModal);
-        closeBtn.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                closeModal();
-            }
-        });
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
-        });
-    </script>
+<footer class="mini rv">
+  <span>© 2026 Noa Husić</span>
+  <span><a href="kontakt.html">Kontakt</a> &nbsp;/&nbsp; <a href="https://github.com/NoaHusic-dev" rel="noopener">GitHub</a> &nbsp;/&nbsp; <a href="pravila-privatnosti.html">Pravila privatnosti</a></span>
+</footer>
+<button class="tgl" id="theme" aria-label="Promijeni temu (svijetla / tamna)"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="9.5" cy="13" r="7"/><circle cx="16.5" cy="13" r="7"/></svg></button>
+<script src="script.js"></script>
 </body>
-
 </html>

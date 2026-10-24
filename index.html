@@ -1,122 +1,120 @@
 <!DOCTYPE html>
 <html lang="hr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio Noe Husića, učenika Tehničke škole Daruvar: web programiranje, dizajn i projekti.">
-    <title>Noa Husić | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Noa Husić – Portfolio</title>
+<meta name="description" content="Portfolio Noe Husića: web razvoj i dizajn.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"light"}catch(e){document.documentElement.dataset.theme="light"}</script>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <nav class="navbar" aria-label="Glavna navigacija">
-            <a class="nav-link" href="index.html" aria-current="page">Početna</a>
-            <a class="nav-link" href="projekti.html">Projekti</a>
-            <a class="nav-link" href="kontakt.html">Kontakt</a>
-        </nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="hb0" x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur class="hb" stdDeviation="0 0"/></filter><filter id="hb1" x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur class="hb" stdDeviation="0 0"/></filter><filter id="hb2" x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur class="hb" stdDeviation="0 0"/></filter><filter id="hb3" x="-20%" y="-10%" width="140%" height="120%"><feGaussianBlur class="hb" stdDeviation="0 0"/></filter></defs></svg>
+<main>
+<div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<header>
+  <a class="logo" href="index.html" aria-label="Početna">NoaHusic-dev</a>
+  <nav class="mini"><a href="projekti.html">Projekti</a><a href="index.html#o-meni">O meni</a><a href="kontakt.html">Kontakt</a></nav>
+</header>
+<section class="stage" data-s>
+  <div class="inner">
+    <p class="mini rule tl">Portfolio<br>Noa Husić</p>
+    <h1><span class="w w1" data-blur="7">Think</span><span class="w w2" data-blur="4">Make</span><span class="w w3" data-blur="8">Deploy</span><!--<span class="w w4" data-blur="9">Lab</span>--></h1>
+    <img class="hero-logo" src="images/mp-logo.png" alt="Logo NoaHusic-dev" decoding="async">
+    <!--<p class="mini rule tr">Web<br>Sučelja<br>Sustavi<br>Detalji</p>-->
+    <div class="cta">
+      <!--<p>Razvijam web stranice i aplikacije koje su jasne, brze i pažljivo oblikovane.</p>-->
+      <a class="row" href="projekti.html"><span class="btn" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class="mini">Pregledaj<br>projekte</span></a>
+    </div>
+  </div>
+</section>
 
-        <section class="hero">
-            <img class="slika" src="./images/mp-logo.png" alt="Noa Husić">
-            <h1 class="name">Noa Husić</h1>
-        </section>
-    </header>
+<section class="sec" id="o-meni" data-s>
+  <p class="mini lbl rv">O meni</p>
+  <div class="bd">
+    <p class="big rv" style="--d:.1s">Učenik sam Tehničke škole Daruvar. Zanimaju me programiranje i dizajn web stranica. <em>U slobodno vrijeme radim na vlastitim projektima kako bih razvijao svoje vještine.</em></p>
 
-    <main>
-        <div class="parent">
-            <section class="div13 card siroko">
-                <h2 class="h2-opis">O meni</h2>
-                <p class="h3-opis">Učenik sam Tehničke škole Daruvar. Zanimaju me programiranje i dizajn web stranica. U slobodno vrijeme radim na vlastitim projektima kako bih razvijao svoje vještine.</p>
-            </section>
+    <div class="facts">
+      <article class="fact rv">
+        <h2 class="mini">Edukacija</h2>
+        <ul class="rows">
+          <li><strong>Tehnička škola Daruvar</strong><span>učenik</span></li>
+          <li><strong>The Complete Full-Stack Web Development Bootcamp</strong><span>Udemy</span></li>
+        </ul>
+      </article>
 
-            <section class="div14 card">
-                <h2 class="h2-opis">Edukacija</h2>
-                <p class="h3-opis">Tehnička škola Daruvar (učenik)<br>Udemy: The Complete Full-Stack Web Development Bootcamp</p>
-            </section>
+      <article class="fact rv" style="--d:.08s">
+        <h2 class="mini">Vještine</h2>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>C</span><span>C++ (osnove)</span><span>SQL (osnove)</span><span>GitHub</span></div>
+      </article>
 
-            <section class="div16 card">
-                <h2 class="h2-opis">Vještine</h2>
-                <ul class="chips">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>C</li>
-                    <li>C++ (osnove)</li>
-                    <li>SQL (osnove)</li>
-                    <li>GitHub</li>
-                </ul>
-            </section>
+      <article class="fact rv">
+        <h2 class="mini">Nagrade i priznanja</h2>
+        <ul class="dots">
+          <li>SoloLearn certifikat za završen tečaj programskog jezika C.</li>
+          <li>SoloLearn certifikat za završen tečaj programskog jezika C++.</li>
+          <li>Završen prvi stupanj tečaja C#.</li>
+          <li>Završen ljetni gaming kamp (Blender, Unity).</li>
+        </ul>
+      </article>
 
-            <section class="div17 card">
-                <h2 class="h2-opis">Nagrade i priznanja</h2>
-                <ul class="h3-opis">
-                    <li>SoloLearn certifikat za završen tečaj programskog jezika C.</li>
-                    <li>SoloLearn certifikat za završen tečaj programskog jezika C++.</li>
-                    <li>Završen prvi stupanj tečaja C#.</li>
-                    <li>Završen ljetni gaming kamp (Blender, Unity).</li>
-                </ul>
-            </section>
+      <article class="fact rv" style="--d:.08s">
+        <h2 class="mini">Ciljevi</h2>
+        <ul class="dots">
+          <li>Produbiti znanje o izradi web stranica (HTML, CSS, JavaScript).</li>
+          <li>Naučiti Python i SQL.</li>
+          <li>Savladati video editiranje i VFX u Blenderu.</li>
+        </ul>
+      </article>
+    </div>
 
-            <section class="div17 card">
-                <h2 class="h2-opis">Ciljevi</h2>
-                <ul class="h3-opis">
-                    <li>Produbiti znanje o izradi web stranica (HTML, CSS, JavaScript).</li>
-                    <li>Naučiti Python i SQL.</li>
-                    <li>Savladati video editiranje i VFX u Blenderu.</li>
-                </ul>
-            </section>
-        </div>
+    <h2 class="mini sub-h rv">Moj napredak</h2>
+    <ol class="steps">
+      <li class="step rv">
+        <span class="yr">2021 – 2022</span>
+        <div><h3>Gaming kamp i C#</h3>
+        <p>Završio sam ljetni kamp u Blenderu i Unityju te prvi stupanj tečaja programskog jezika C#.</p></div>
+      </li>
+      <li class="step rv">
+        <span class="yr">2022 – 2025</span>
+        <div><h3>Izrada web stranica i digitalni alati</h3>
+        <p>Izrađivao sam web stranice u alatima Webador, WordPress i WebSite te stekao praktično iskustvo kroz:</p>
+        <ul class="dots">
+          <li>dizajn web trgovina, upravljanje narudžbama i računima</li>
+          <li>izradu službenih email predložaka</li>
+          <li>rad u alatima Word, Excel, PowerPoint i OneDrive</li>
+          <li>izradu obrazaca u Microsoft Forms, Google Forms i Cognito Forms</li>
+          <li>usporedbu alata za izdavanje e-računa</li>
+        </ul></div>
+      </li>
+      <li class="step rv">
+        <span class="yr">2026</span>
+        <div><h3>Programski jezik C, Full-Stack bootcamp i C++</h3>
+        <p>Naučio sam osnove programiranja kroz programski jezik C.</p>
+        <p>Upisao sam Udemy tečaj „The Complete Full-Stack Web Development Bootcamp“ i počeo učiti osnove programskog jezika C++.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
 
-        <section class="timeline-container">
-            <h2 class="h2-opis">Moj napredak</h2>
-            <ul class="timeline">
-                <li class="timeline-item">
-                    <span class="timeline-date">2021. – 2022.</span>
-                    <div class="timeline-content">
-                        <h3>Gaming kamp i C#</h3>
-                        <p>Završio sam ljetni kamp u Blenderu i Unityju te prvi stupanj tečaja programskog jezika C#.</p>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                    <span class="timeline-date">2022. – 2025.</span>
-                    <div class="timeline-content">
-                        <h3>Izrada web stranica i digitalni alati</h3>
-                        <p>Izrađivao sam web stranice u alatima Webador, WordPress i WebSite te stekao praktično iskustvo kroz:</p>
-                        <ul>
-                            <li>dizajn web trgovina, upravljanje narudžbama i računima</li>
-                            <li>izradu službenih email predložaka</li>
-                            <li>rad u alatima Word, Excel, PowerPoint i OneDrive</li>
-                            <li>izradu obrazaca u Microsoft Forms, Google Forms i Cognito Forms</li>
-                            <li>usporedbu alata za izdavanje e-računa</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                    <span class="timeline-date">2025.</span>
-                    <div class="timeline-content">
-                        <h3>Programski jezik C</h3>
-                        <p>Naučio sam osnove programiranja kroz programski jezik C.</p>
-                    </div>
-                </li>
-                <li class="timeline-item">
-                    <span class="timeline-date">2026.</span>
-                    <div class="timeline-content">
-                        <h3>Full-Stack bootcamp i C++</h3>
-                        <p>Upisao sam Udemy tečaj „The Complete Full-Stack Web Development Bootcamp“ i počeo učiti osnove programskog jezika C++.</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </main>
+<!--<section class="sec" id="radovi" data-s>
+  <p class="mini lbl rv">Odabrani radovi</p>
+  <div class="bd">
+    <a class="work rv" href="projekti.html"><span class="n">01</span><span class="t">Digitalni raspored sati</span><span class="g">Svelte · Go · Tailwind</span><span class="y">2026</span><span class="ar">↗</span></a>
+    <a class="work rv" style="--d:.1s" href="projekti.html"><span class="n">02</span><span class="t">Naziv projekta</span><span class="g">HTML · CSS · JS</span><span class="y">2026</span><span class="ar">↗</span></a>
+    <a class="work rv" style="--d:.2s" href="projekti.html"><span class="n">03</span><span class="t">Naziv projekta</span><span class="g">HTML · CSS · JS</span><span class="y">2026</span><span class="ar">↗</span></a>
+  </div>
+</section>-->
+</main>
 
-    <footer>
-        <a class="git" href="https://github.com/NoaHusic-dev" target="_blank" rel="noopener">GitHub <i class="fa fa-github" style="font-size:24px" aria-hidden="true"></i></a>
-        <a class="pravila-privatnosti" href="pravila-privatnosti.html" target="_blank" rel="noopener">Pravila privatnosti</a>
-        <p>&copy; Noa Husić | Sva prava pridržana</p>
-    </footer>
-
+<footer class="mini rv" data-s>
+  <span>© 2026 Noa Husić</span>
+  <span><a href="kontakt.html">Kontakt</a> &nbsp;/&nbsp; <a href="https://github.com/NoaHusic-dev" rel="noopener">GitHub</a> &nbsp;/&nbsp; <a href="pravila-privatnosti.html">Pravila privatnosti</a></span>
+</footer>
+<div class="idx" aria-hidden="true"><span id="idxn">01</span><i class="on"></i><i></i><i></i><i></i></div>
+<button class="tgl" id="theme" aria-label="Promijeni temu (svijetla / tamna)"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="9.5" cy="13" r="7"/><circle cx="16.5" cy="13" r="7"/></svg></button>
+<script src="script.js"></script>
 </body>
-
 </html>
